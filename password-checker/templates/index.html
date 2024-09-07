@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Evaluator</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #121212;
+            color: #cddc39;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .container {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px; /* Increased border-radius for the glove effect */
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            width: 100%;
+            max-width: 600px; /* Increased max-width for more space */
+            margin: 20px auto;
+        }
+        h1 {
+            text-align: center;
+            color: #76ff03;
+            font-family: 'Consolas', monospace;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #b2ff59;
+        }
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #76ff03;
+            border-radius: 4px;
+            background-color: #212121;
+            color: #cddc39;
+        }
+        input[type="submit"] {
+            background-color: #00c853;
+            color: #212121;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #00e676;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #76ff03;
+            border-radius: 4px;
+            background-color: #2e7d32;
+            color: #ffffff;
+        }
+        .about {
+            margin-top: 30px;
+            background-color: #263238;
+            padding: 15px;
+            border-radius: 12px; /* Increased border-radius to match the container */
+            border: 1px solid #76ff03;
+            color: #cddc39;
+        }
+        .about ul {
+            list-style-type: square;
+            margin-left: 20px;
+            color: #b2ff59;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+            background-color: #1e1e1e;
+            border-top: 1px solid #76ff03;
+            color: #b2ff59;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Strength Evaluator</h1>
+        <form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" required>
+            <label for="creation_date">Password Creation Date:</label>
+            <input type="date" id="creation_date" name="creation_date" required>
+            <input type="submit" value="Evaluate Password">
+        </form>
+        {% if result %}
+        <div class="result">
+            <h2>Evaluation Result:</h2>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+        
+        <div class="about">
+            <h2>About This Application</h2>
+            <ul>
+                <li>Password Strength Analysis based on various criteria.</li>
+                <li>Username Check for weak or compromised usernames.</li>
+                <li>Cryptographic Analysis to assess the robustness of password encryption.</li>
+                <li>Deep Learning Prediction for potential password breaches.</li>
+                <li>Entropy Calculation to measure password randomness.</li>
+                <li>Position Complexity Evaluation to analyze password structure.</li>
+                <li>Real-time Feedback to improve password security.</li>
+                <li>Responsive Web Interface powered by a Flask Backend.</li>
+                <li>Comprehensive analysis with detailed security recommendations.</li>
+                <li>Designed for ease of use with a focus on cybersecurity best practices.</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Created by Yaswanth CCE</p>
+            <p>Email: yaswanth.b2023cce@sece.ac.in</p>
+        </footer>
+    </div>
+</body>
+</html>
